@@ -1,9 +1,7 @@
 import java.util.*;
-public class fiboSeriesRec
-{
-    public static void main(String[] args)
-    {
+public class fiboSeriesRec {
 
+    public static void main(String[] args) {
         //Scanner allows input from user, int in this case
         Scanner sc = new Scanner(System.in);
         long n;          //declare n as a long since numbers get too large for int
@@ -11,11 +9,16 @@ public class fiboSeriesRec
         n = sc.nextInt();
 
         System.out.println("The first " + n + " Fibonacci numbers are:");
-        for (long i=0; i < n; i++)              //Adds each 'n' to a list as the output
-        {
+
+        long startTime = System.nanoTime();
+        for (long i=0; i < n; i++) {              //Adds each 'n' to a list as the output
             System.out.println(fibonacci(i));   //Prints out the list
         }
+        long endTime = System.nanoTime();
+
+        System.out.println("It took " + n + " iterations: " + (endTime - startTime) + " nanoseconds");
     }
+
     //Recursive function for fibonacci sequence
     public static long fibonacci(long num) {
 
